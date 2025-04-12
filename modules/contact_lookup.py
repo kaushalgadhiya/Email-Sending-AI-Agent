@@ -1,52 +1,9 @@
-# import pandas as pd
-
-# def get_email(name):
-#     df = pd.read_excel("contacts.xlsx")
-#     df.columns = df.columns.str.strip()
-#     email = df[df['Name'].str.lower() == name.lower()]['Email'].values
-#     if len(email):
-#         return email[0]
-#     else:
-#         raise ValueError("Email not found for the name: " + name)
-
-
-# import pandas as pd
-
-# def get_email(name):
-#     df = pd.read_excel("contacts.xlsx")  # Make sure the path is correct
-#     df.columns = df.columns.str.strip()  # Remove any extra whitespace from headers
-#     email = df[df['Person Name'].str.lower() == name.lower()]['Email Address'].values
-#     if len(email):
-#         return email[0]
-#     else:
-#         raise ValueError("Email not found for the name: " + name)
-
-
-
-# import pandas as pd
-
-# def get_email(name):
-#     df = pd.read_excel("contacts.xlsx")
-    
-#     # Normalize column names: strip spaces and lowercase
-#     df.columns = df.columns.str.strip().str.lower()
-    
-#     # Now match against cleaned column names
-#     email = df[df['name'].str.lower() == name.lower()]['email'].values
-
-#     if len(email):
-#         return email[0]
-#     else:
-#         raise ValueError("Email not found for the name: " + name)
-
-
-# modules/contact_lookup.py
 import os
 import pandas as pd
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-SHEET_ID = "1Tv6vTnF9xCh7gQQGwb-XSGzULnV_ejgv60KTa6G5Kps"
+SHEET_ID = "<ENTER YOUR GOOGLE SHEET ID>"
 SHEET_RANGE = "Sheet1!A:B"  # Adjust this if your sheet has a different name or range
 
 def get_email(name):
